@@ -1,5 +1,15 @@
 # keyneurons
+This is the torch implementation of [Analyzing Key Neurons in Large Language Models](https://arxiv.org/pdf/2406.10868).
 
+Functions
+* extract key neurons ✅
+* edit knowledge ❌
+* show code examples ❌
+
+# install
+```
+pip install -i https://test.pypi.org/simple/ keyneurons==0.0.2
+```
 
 # example
 
@@ -20,3 +30,4 @@ KeyNeuron = NaicaKeyNeuron(
 )
 KeyNeuron._extract_key_neuron()
 ```
+After, you can find the key neuron file in `data/`
