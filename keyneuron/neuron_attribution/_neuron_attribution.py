@@ -1,4 +1,3 @@
-# main knowledge neurons class
 import logging
 from typing import List, Optional, Tuple, Callable
 import collections
