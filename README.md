@@ -17,7 +17,7 @@ pip install -i https://test.pypi.org/simple/ keyneurons==0.0.2
 import random
 import json
 from pathlib import Path
-from keyneuron import KeyNeuron
+from keyneurons import KeyNeuron
 
 random.seed(42)
 
@@ -31,10 +31,12 @@ KN = KeyNeuron(
     result_dir = 'data/',
     common_threshold=0.7,
     top_v=5, 
-    attr_threshold=0.3
+    attr_threshold=0.3,
+    option_letters = ["A", "B", "C", "D"],
 )
 # extract key neurons and store them in the result_dir
 KN._extract_key_neuron()
+
 
 
 ```
