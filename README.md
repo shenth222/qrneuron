@@ -17,7 +17,7 @@ pip install -i https://test.pypi.org/simple/ keyneurons==0.0.2
 import random
 import json
 from pathlib import Path
-from keyneurons import KeyNeuron
+from keyneuron import KeyNeuron
 
 random.seed(42)
 
