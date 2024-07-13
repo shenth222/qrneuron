@@ -12,7 +12,7 @@ Functions
 ```
 pip install -i https://test.pypi.org/simple/ keyneuron==0.0.2
 ```
-
+[pypi link](https://test.pypi.org/project/keyneuron/0.0.2/#description)
 # example
 
 ```python
@@ -41,10 +41,9 @@ KN = KeyNeuron(
 # extract key neurons and store them in the result_dir
 KN._extract_key_neuron()
 
-
-
 ```
 After, you can find the key neuron file in `data/`
+
 
 ## Citation
 If you find our paper and code useful, please give us a citation :blush:
