@@ -1,4 +1,4 @@
-# keyneurons
+# keyneuron
 This is the torch implementation of [Analyzing Key Neurons in Large Language Models](https://arxiv.org/pdf/2406.10868).
 
 Functions
