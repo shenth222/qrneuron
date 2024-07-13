@@ -1,12 +1,11 @@
 import os
 import math
-import random
 import logging
 from functools import lru_cache
 from tqdm import tqdm
 import json
 from pathlib import Path
-from neuron_attribution import NeuronAtrribution
+from .neuron_attribution import NeuronAtrribution
 
 # Configure the logger
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -31,6 +30,22 @@ class NaicaKeyNeuron:
             common_neuron_file: str = "common_neuron.json",
             key_neuron_file: str = "key_neuron.json",
         ):
+            """_summary_
+
+            Args:
+                model_name (str): model name on HuggingFace, e.g., meta-llama/Llama-2-7b-chat-hf. Recommend instruction-alined models
+                data_samples (str): a json object contains queries. see the data format in /data/domain_sample_multi_choice_qa.json
+                result_dir (str): result directory to store intermidiate files
+                attr_threshold (float, optional):  the attribution threshold t to filter neurons with low scores. Defaults to 0.2.
+                common_threshold (float, optional): the threshold to find common neurons. Defaults to 0.3.
+                batch_size (int, optional): batch size. Defaults to 20.
+                steps (int, optional): the number of the estimation steps to compute ingrated gradients. Defaults to 20.
+                top_v (int, optional): we select top-v neurons with the highest score from the detected cluster. Defaults to 10.
+                option_letters (str, optional): the option letter set. Defaults to ["A", "B", "C", "D"].
+                neuron_attr_score_file (str, optional): the file to store neuron attribution. Defaults to "neuron_attr_score.json".
+                common_neuron_file (str, optional): the file to store common neurons. Defaults to "common_neuron.json".
+                key_neuron_file (str, optional): the file to store the extracted key neurons. Defaults to "key_neuron.json".
+            """
             self.model_name = model_name
             self.data_samples = data_samples
             self.option_letters = option_letters
