@@ -14,13 +14,18 @@ pip install -i https://test.pypi.org/simple/ keyneurons==0.0.2
 # example
 
 ```python
+import random
+import json
+from pathlib import Path
+from keyneuron import KeyNeuron
+
 random.seed(42)
 
 DATA_PATH = Path("data/domain_sample_multi_choice_qa.json")
 DATA_SAMPLE = json.load(open(DATA_PATH))
 print("[ sample number = {a}]".format(a=len(DATA_SAMPLE)))
 
-KeyNeuron = NaicaKeyNeuron(
+KN = KeyNeuron(
     model_name = "EleutherAI/gpt-neo-125M",
     data_samples = DATA_SAMPLE,
     result_dir = 'data/',
@@ -28,6 +33,9 @@ KeyNeuron = NaicaKeyNeuron(
     top_v=5, 
     attr_threshold=0.3
 )
-KeyNeuron._extract_key_neuron()
+# extract key neurons and store them in the result_dir
+KN._extract_key_neuron()
+
+
 ```
 After, you can find the key neuron file in `data/`
