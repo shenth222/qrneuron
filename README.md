@@ -27,13 +27,15 @@ DATA_SAMPLE = json.load(open(DATA_PATH))
 print("[ sample number = {a}]".format(a=len(DATA_SAMPLE)))
 
 KN = KeyNeuron(
-    model_name = "EleutherAI/gpt-neo-125M",
+    model_name = "meta-llama/Llama-2-7b-chat-hf",
     data_samples = DATA_SAMPLE,
     result_dir = 'data/',
     common_threshold=0.7,
     top_v=5, 
     attr_threshold=0.3,
     option_letters = ["A", "B", "C", "D"],
+    batch_size = 4,
+    steps = 20,
 )
 # extract key neurons and store them in the result_dir
 KN._extract_key_neuron()
