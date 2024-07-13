@@ -8,7 +8,7 @@ Functions
 
 # install
 ```
-pip install -i https://test.pypi.org/simple/ keyneurons==0.0.2
+pip install -i https://test.pypi.org/simple/ keyneuron==0.0.2
 ```
 
 # example
