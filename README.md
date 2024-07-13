@@ -1,11 +1,12 @@
 # keyneuron
 This is the torch implementation of [Analyzing Key Neurons in Large Language Models](https://arxiv.org/pdf/2406.10868). <br>
-The code of computing neuron attribution is adapted from [EleutherAI](https://github.com/EleutherAI/knowledge-neurons)，and we thank for their effort and contribution.
+The code of computing neuron attribution is adapted from [EleutherAI](https://github.com/EleutherAI/knowledge-neurons)， and we thank them for their effort and contribution.
 
 Functions
 * extract key neurons ✅
 * edit knowledge ❌
-* show code examples ❌
+* code examples ❌
+* test cases ❌
 
 # install
 ```
