@@ -1,9 +1,9 @@
-# keyneuron
-This is the torch implementation of [Analyzing Key Neurons in Large Language Models](https://arxiv.org/pdf/2406.10868). <br>
+# QRneuron
+This is the torch implementation of [Identifying Query-Relevant Neurons in Large Language Models for Long-Form Texts]. <br>
 The code of computing neuron attribution is adapted from [EleutherAI](https://github.com/EleutherAI/knowledge-neurons)， and we thank them for their effort and contribution.
 
 Functions
-* extract key neurons ✅
+* extract QR neurons ✅
 * edit knowledge ❌
 * code examples ❌
 * test cases ❌
