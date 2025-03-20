@@ -48,8 +48,8 @@ After, you can find the key neuron file in `data/`
 ## Citation
 If you find our paper and code useful, please give us a citation :blush:
 ```bibtex
-@article{chen2024analyzing,
-  title={Analyzing Key Neurons in Large Language Models},
+@article{chen2024identifying,
+  title={Identifying Query-Relevant Neurons in Large Language Models for Long-Form Texts},
   author={Chen, Lihu and Dejl, Adam and Toni, Francesca},
   journal={arXiv preprint arXiv:2406.10868},
   year={2024}
