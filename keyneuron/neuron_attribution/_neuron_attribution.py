@@ -24,13 +24,15 @@ class NeuronAtrribution:
     def __init__(
         self,
         model_name: str = "meta-llama/Llama-2-7b-chat-hf",
-        option_letters: List[str] = ["A", "B", "C", "D"]
+        option_letters: List[str] = ["A", "B", "C", "D"],
+        torch_dtype = torch.float32
     ):
         try:
-            self.model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float16, device_map="auto")
-        finally:
+            self.model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch_dtype, device_map="auto")
+        except Exception as e:
+            logger.warning(f"Failed to load model in {torch_dtype} precision: {e}, reloading in torch.float32")
             self.model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.float32, device_map="auto")
-        
+
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
 
         self.model.eval()

@@ -6,6 +6,7 @@ from tqdm import tqdm
 import json
 from pathlib import Path
 from .neuron_attribution import NeuronAtrribution
+import torch
 
 # Configure the logger
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -29,6 +30,7 @@ class NaicaKeyNeuron:
             neuron_attr_score_file: str = "neuron_attr_score.json",
             common_neuron_file: str = "common_neuron.json",
             key_neuron_file: str = "key_neuron.json",
+            torch_dtype=torch.float32
         ):
             """_summary_
 
@@ -68,7 +70,7 @@ class NaicaKeyNeuron:
             self.common_neurons = list()
             self.occurances = dict() 
             
-            self.NA = NeuronAtrribution(model_name=self.model_name, option_letters=self.option_letters)
+            self.NA = NeuronAtrribution(model_name=self.model_name, option_letters=self.option_letters, torch_dtype=torch_dtype)
         
         def _cal_na(self):
             logging.info("start to calculate neuron attribution")
